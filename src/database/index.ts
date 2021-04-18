@@ -1,3 +1,5 @@
 import { createConnection } from 'typeorm';
 
-(async () => await createConnection())();
+if (process.env.NODE_ENV !== 'test') {
+  (async () => await createConnection())();
+}

@@ -1,17 +1,17 @@
 import { container } from 'tsyringe';
 
 import { IUsersRepository } from '../../modules/users/repositories/IUsersRepository';
-import { UsersRepository } from '../../modules/users/repositories/UsersRepository';
+import { InMemoryUsersRepository } from '../../modules/users/repositories/in-memory/InMemoryUsersRepository';
 
 import { IStatementsRepository } from '../../modules/statements/repositories/IStatementsRepository';
-import { StatementsRepository } from '../../modules/statements/repositories/StatementsRepository';
+import { InMemoryStatementsRepository } from '../../modules/statements/repositories/in-memory/InMemoryStatementsRepository';
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
-  UsersRepository
+  InMemoryUsersRepository
 );
 
 container.registerSingleton<IStatementsRepository>(
   'StatementsRepository',
-  StatementsRepository
+  InMemoryStatementsRepository
 );
